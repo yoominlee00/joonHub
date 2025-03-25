@@ -15,8 +15,10 @@ d = int(sys.stdin.readline())
 while lst:
     end = heapq.heappop(lst)
     heapq.heappush(train,end[1])
-    while train and train[0] < (end[0]-d):
+    while train[0] < (end[0]-d):
         heapq.heappop(train)
+        if not train:
+            break
     if len(train) >= cnt:
         cnt = len(train)
 
