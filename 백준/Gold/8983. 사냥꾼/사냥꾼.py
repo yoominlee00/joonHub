@@ -19,17 +19,14 @@ def find(pl,pr,x):
             return find(mid+1,pr,x)
         else:
             return find(pl,mid-1,x)
-    if pl >= len(hunt):
-        return pr
-    elif pr <= 0:
-        return pl
-    elif len(hunt)>1 and abs(hunt[pr]-x) >= abs(hunt[pr+1]-x):
-        return pr+1
-    else:
-        return pr
+    return pl 
     
 for x, y in animal:
-    hunt_id = find(0,len(hunt)-1,x)
-    if abs(hunt[hunt_id] - x) + y <= L:
-        cnt+=1
+    id = find(0,len(hunt)-1,x)
+    for i in [id - 1, id]:  # 두 후보 다 확인
+        if 0 <= i < len(hunt):
+            if abs(hunt[i] - x) + y <= L:
+                cnt += 1
+                break
+        
 print(cnt)
