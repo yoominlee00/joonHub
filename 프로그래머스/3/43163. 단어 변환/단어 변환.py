@@ -11,9 +11,8 @@ def solution(begin, target, words):
             min_n = min(min_n,n)
             return 
         
-        if n >= len(words):
+        if n == len(words)-1:
             min_n = 0
-            return
             
         if n == 0:
             start = idx
@@ -34,4 +33,4 @@ def solution(begin, target, words):
             visited[i] = False
         return 
     dfs(begin,0)
-    return 0 if min_n == float('inf') else min_n
+    return min_n
