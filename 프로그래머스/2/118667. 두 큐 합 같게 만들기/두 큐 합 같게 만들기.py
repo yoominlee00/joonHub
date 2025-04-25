@@ -23,6 +23,6 @@ def solution(queue1, queue2):
             sum2 -= p
             sum1 += p
             cnt+=1
-    if sum(q1) != sum(q2) or cnt >= limit*2:
+    if cnt >= limit*2:
         cnt = -1
     return cnt
