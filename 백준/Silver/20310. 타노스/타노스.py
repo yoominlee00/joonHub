@@ -1,4 +1,3 @@
-import sys
 lst =  list(map(int,input()))
 num_1 = sum(lst)
 num_0 = len(lst)-num_1
