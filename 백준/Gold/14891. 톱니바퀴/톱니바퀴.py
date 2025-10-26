@@ -63,16 +63,6 @@ sum = 0
 
 for i in range(1,5):
     if wheel[i][0]:
-        if i == 1:
-            sum += 1
-        if i == 2:
-            sum += 2
-        if i ==3:
-            sum += 4
-        if i ==4:
-            sum += 8
+        sum += 2**(i-1)
 
 print(sum)
-
-
-    
